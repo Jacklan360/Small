@@ -3,6 +3,7 @@
     <nav-main></nav-main>
     <nav-footer></nav-footer>
   <div @click="changenum(222)">{{num}}</div>
+  {{message}}
   <!--<div>{{name}}</div>-->
   <!--<div>{{arr}}</div>-->
 </template>
@@ -21,6 +22,11 @@ export default defineComponent({
     NavHeader,
     NavFooter,
     NavMain
+  },
+  provide(){
+    return {
+      message: '放肆'
+    }
   },
   setup(props, ctx){
     let num = ref(10)
